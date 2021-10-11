@@ -98,6 +98,9 @@ fda['initial_firm_notification'].unique()
 
 # In[ ]:
 
-
+dump(fda, df, skipkeys=False, 
+    check_circular=True, allow_nan=True, 
+    indent=None, separators=None, default=None, 
+    sort_keys=False)
 
 

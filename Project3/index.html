@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>FDA Recalls</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>FDA Food Recalls</title>
 
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
@@ -12,10 +14,52 @@
   <!-- Our CSS -->
   <link rel="stylesheet" type="text/css" href="static/css/style.css">
 </head>
-<body>
 
+
+<body>
+  <p>Focusing on the United States, a sample of 1000 food recalls from 2016 were reviewed. Some recalls were mandatory and others were voluntary. Here's a brief summary of the sample. </p>
+  <!-- summary table -->
+  <h3>Brief overview of recalls </h2>
+  <!-- Table -->
+  <table class=table-bordered>
+    <thead>
+      <tr>
+      <th colspan='3'>Reason and Status</th>
+      </tr>
+      <tr>
+        <th>Status</th>
+        <th>Voluntary</th>
+        <th>Mandated</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id=row>Ongoing</td>
+        <td>TBD</td>
+        <td>TBD</td>
+      </tr>
+      <tr>
+        <td id=row>Terminated</td>
+        <td>TBD</td>
+        <td>TBD</td>
+      </tr>
+    </tbody>
+
+  </table>
   <!-- The div that holds our map -->
+  <h2>US Map </h2>
+  <p> Utilize this map to show where the area recalls had originated from. It can be filtered to show all recalls from the sample or by Class I or Class II. For FDA class definations, visit their website <a href= "https://www.fda.gov/safety/industry-guidance-recalls/recalls-background-and-definitions">HERE. </a> </p>
   <div id="map-id"></div>
+  <!-- The div that holds our initial notice pie chart -->
+  <h2>Initial Notices</h2>
+  <p>This chart shows how the initial notice was implimented according to the selections made in the map above.</p>
+  <div id='pie'></div>
+
+
+
+
+
+
 
   <!-- D3 -->
   <script src="https://d3js.org/d3.v5.min.js"></script>
@@ -28,7 +72,9 @@
   <!-- API Key -->
   <script type="text/javascript" src="static/js/config.js"></script>
   <!-- Our JavaScript -->
-  <script type="text/javascript" src="static/js/logic.js"></script>
-</body>
+  <script type="text/javascript" src="static/js/logic.js"></script> 
+  <!--JSON File -->
 
+
+</body>
 </html>
