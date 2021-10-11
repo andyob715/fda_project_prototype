@@ -96,8 +96,13 @@ fda['initial_firm_notification'].unique()
 # plt.savefig('Images/initial_notice_pie.png', bbox_inches='tight')
 
 
-# In[ ]:
+# # In[ ]:
+
+# dump(fda, df, skipkeys=False, 
+#     check_circular=True, allow_nan=True, 
+#     indent=None, separators=None, default=None, 
+#     sort_keys=False)
 
 
 
-
+# %%

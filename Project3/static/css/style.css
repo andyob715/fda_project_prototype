@@ -1,7 +1,74 @@
-html,
-body,
+/* html, */
+body { 
+  font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  background-image: url(../../Images/paper-texture.jpg);
+}
+
+.header-img {
+  width: 100%; 
+  height: 400px; 
+  background: url(../../Images/Spices-on-Spoons.jpg); 
+  background-size: cover;
+  background-position: center;
+}
+
 #map-id {
   height: 100%;
   padding: 0;
   margin: 0;
+}
+
+h1 {
+  text-align: center;
+  padding-top: 10px;
+  color:darkslategrey;
+  font-weight: bolder;
+}
+
+h2 {
+  text-align: center;
+  color:slategray;
+  font-weight: bold;
+}
+
+h3 {
+  text-align: center;
+  color:slategray;
+  font-weight: bold;
+}
+
+h4 {
+  text-align: left;
+  color:slategray;
+  font-weight: bold;
+}
+
+h5 {
+  text-align: left;
+  color:slategray;
+  font-weight: bold;
+}
+
+h6 {
+  text-align: left;
+  color:slategray;
+  font-weight: normal
+}
+
+.table-bordered {
+  border: 0px;
+  width: 100%;
+  box-sizing: content-box; 
+  max-width: 100%;
+  border-spacing: 2px;
+}
+
+table, th, td{
+  border: 1px solid black;
+}
+
+.margin-top-80 {
+  margin-top: 80px;
 }

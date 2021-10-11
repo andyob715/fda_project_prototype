@@ -2,20 +2,125 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>FDA Recalls</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>FDA Food Recalls</title>
 
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
   integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
   crossorigin=""/>
 
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="static/css/style.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<!--Some scripts I finally realized i had to add to get the dropdown to work-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
   <!-- Our CSS -->
   <link rel="stylesheet" type="text/css" href="static/css/style.css">
-</head>
-<body>
 
+
+</head>
+
+<main>
+  <div class="header-img"></div>
+</main>
+
+<body>
+  <h1>FDA Food Recalls - USA</h1>
+  <p>Focusing on the United States, a sample of 1000 food recalls from 2016 were reviewed. Some recalls were mandatory and others were voluntary. Here's a brief summary of the sample. </p>
+  <!-- summary table -->
+  <h2>Brief overview of recalls </h2>
+  <!-- Table -->
+  <table class="table-bordered">
+    <thead>
+      <tr>
+      <th colspan='3'>Reason and Status</th>
+      </tr>
+      <tr>
+        <th>Status</th>
+        <th>Voluntary</th>
+        <th>Mandated</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id='row'>Ongoing</td>
+        <td>TBD</td>
+        <td>TBD</td>
+      </tr>
+      <tr>
+        <td id='row'>Terminated</td>
+        <td>TBD</td>
+        <td>TBD</td>
+      </tr>
+    </tbody>
+
+  </table>
   <!-- The div that holds our map -->
-  <div id="map-id"></div>
+  <h2>US Map </h2>
+  <p> Utilize this map to show where the area recalls had originated from. It can be filtered to show all recalls from the sample or by Class I or Class II. For FDA class definations, visit their website <a href= "https://www.fda.gov/safety/industry-guidance-recalls/recalls-background-and-definitions">HERE. </a> </p>
+  <div id="map-id">
+  <hr class="my-4">
+ <!-- Creates the Overall Grid -->
+ <div class="container">
+  <!-- The div that holds our map -->
+    <div class="row">  
+      <div class="col-md-12">
+        <div id="map-id">
+        </div> 
+      </div>
+    </div>
+
+
+  <!-- The div that holds our table -->
+   <div class="row">
+    <div class="col-md-12">
+      <h2 class ="heading">Recalls</h2>
+      <table class="table table-bordered table-hover table-responsive">
+        <thead class="thead-dark">
+          <tr>
+            <th>City</th>
+            <th>Address</th>
+            <th>Recall Reason</th>
+            <th>Postal Code</th>
+            <th>Recall Type</th>
+            <th>Latitude</th>
+            <th>Longitude</th>          
+          </tr>
+        </thead>
+          {% for item in items %}
+        <tbody>
+          <tr>
+            <td>{{item['city']}}</td>
+            <td>{{item['address']}}</td>
+            <td>{{item['recall reason']}}</td>
+            <td>{{item['postal code']}}</td>
+            <td>{{item['recall type']}}</td>
+            <td>{{item['latitude']}}</td>
+            <td>{{item['longitude']}}</td>  
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+   </div>
+ </div>
+</div>
+  <!-- The div that holds our initial notice pie chart -->
+  <h2>Initial Notices</h2>
+  <p>This chart shows how the initial notice was implimented according to the selections made in the map above.</p>
+  <div id='pie'></div>
+
+
+
+
+
+
 
   <!-- D3 -->
   <script src="https://d3js.org/d3.v5.min.js"></script>
@@ -28,7 +133,9 @@
   <!-- API Key -->
   <script type="text/javascript" src="static/js/config.js"></script>
   <!-- Our JavaScript -->
-  <script type="text/javascript" src="static/js/logic.js"></script>
-</body>
+  <script type="text/javascript" src="static/js/logic.js"></script> 
+  <!--JSON File -->
 
+
+</body>
 </html>
