@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function()
   trackResize: true 
   });
 //FDA URL
-var limit = 10;
+var limit = 1000;
 var url = `https://api.fda.gov/food/enforcement.json?limit=${limit}`;
 
 // Grab the data with d3
