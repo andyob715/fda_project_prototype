@@ -1,43 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>FDA Recalls</title>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>FDA Recalls</title>
+    <!-- Mapbox GL -->
 
-<!-- Leaflet CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
-  integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
-  crossorigin=""/>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.5.1/mapbox-gl.css' rel='stylesheet' />
+    
+    <!-- d3 JavaScript -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
 
-<!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="static/css/style.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Our CSS -->
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
 
-<!--Some scripts I finally realized i had to add to get the dropdown to work-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-</head>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
 
-<body>
+
+  </head>
+  <body>
   <h1>FDA Recall Data</h1>
 <hr class="my-4">
- <!-- Creates the Overall Grid -->
- <div class="container">
-  <!-- The div that holds our map -->
-    <div class="row">  
-      <div class="col-md-12">
-        <div id="map-id">
-        </div> 
-      </div>
-    </div>
-  <!-- The div that holds our table -->
-   <div class="row">
-    <div class="col-md-12">
+<!--Map Portion-->
+<div id='map'>
+</div>
+<!--Table Portion-->
+  <hr class="my-4">
       <h4 class ="heading">Recalls</h4>
-      <table class="table table-bordered table-hover table-responsive">
-        <thead class="thead-dark">
+      <table>
+        <thead>
           <tr>
             <th>City</th>
             <th>Address</th>
@@ -65,18 +57,11 @@
     </div>
    </div>
  </div>
-  <!-- D3 -->
-  <script src="https://d3js.org/d3.v5.min.js"></script>
-
-  <!-- Leaflet JavaScript -->
-  <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
-  integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
-  crossorigin=""></script>
-
-  <!-- API Key -->
-  <script type="text/javascript" src="static/js/config.js"></script>
+</body>
   <!-- Our JavaScript -->
   <script type="text/javascript" src="static/js/logic.js"></script>
-</body>
 
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.5.1/mapbox-gl.js'></script>
+
+  
 </html>

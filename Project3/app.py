@@ -1,6 +1,6 @@
 from flask import Flask, render_template, redirect
 import pymongo
-
+import json
 from flask_pymongo import PyMongo
 import scrape_fda
 
@@ -14,16 +14,15 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def index():
-    items = (mongo.db.items.find())
+    items = mongo.db.items.find()
     return render_template("index.html", items = items)
-
-
-@app.route("/scrape")
-def scraper():
-    items = mongo.db.items
-    items_data = scrape_fda.scrape()
-    items.update({}, items_data, upsert=True)
-    return redirect("/", code=302)
+    
+# @app.route("/scrape")
+# def scrape():
+#     items = mongo.db.items
+#     items_data = scrape_fda.scrape()
+#     items.update_many({}, items_data, upsert=True)
+#     return redirect("/", code=302)
 
 
 if __name__ == "__main__":
