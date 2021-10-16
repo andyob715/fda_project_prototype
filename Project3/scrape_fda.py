@@ -7,23 +7,20 @@ from flask import Flask
 # Import our pymongo library, which lets us connect our Flask app to our Mongo database.
 import pymongo
 
-# Create an instance of our Flask app.
-app = Flask(__name__)
-
-# Create connection variable
-conn = 'mongodb://localhost:27017'
-
-# Pass connection to the pymongo instance.
-client = pymongo.MongoClient(conn)
-
-# Connect to a database. Will create one if not already available.
-db = client.fda_db
 
 def scrape():
 
+        # Create connection variable
+    conn = 'mongodb://localhost:27017'
+
+    # Pass connection to the pymongo instance.
+    client = pymongo.MongoClient(conn)
+
+    # Connect to a database. Will create one if not already available.
+    db = client.fda_db
+
 # Drops collection if available to remove duplicates
     db.items.drop()
-
 
     # Create Dictionarys
     limit = 10
@@ -50,8 +47,6 @@ def scrape():
 
             zip_lat = zip_response_json["places"][0]['latitude']     
             zip_long = zip_response_json["places"][0]['longitude']
-        except:
-            print(f'{postal_formatted} could not return a result')
 
         # Dictionary to be inserted as a MongoDB document
             post = {
@@ -66,6 +61,8 @@ def scrape():
             }
         
             db.items.insert_one(post)
-
+    
+        except:
+            print(f'{postal_formatted} could not return a result')
 
     return
