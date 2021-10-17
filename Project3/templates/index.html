@@ -7,11 +7,17 @@
 
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.5.1/mapbox-gl.css' rel='stylesheet' />
     
-    <!-- d3 JavaScript -->
-    <script src="https://d3js.org/d3.v5.min.js"></script>
 
-    <!-- Our CSS -->
-    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!--Some scripts I finally realized i had to add to get the dropdown to work-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 
 
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -19,17 +25,66 @@
 
 
   </head>
-  <body>
-  <h1>FDA Recall Data</h1>
+
+<main>
+  <div class="header-img"></div>
+</main>
+
+<body>
+
+  <h1>FDA Food Recalls - USA</h1>
+  <p>Focusing on the United States, a sample of 1000 food recalls from 2016 were reviewed. Some recalls were mandatory and others were voluntary. Overview, interactive map, details, and statistics are below. Enjoy. </p>
+
+  <!-- summary table -->
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class ="heading">Brief overview of recalls</h2>
+      <table class="table table-bordered table-responsive recall">
+        <thead class="thead-dark">
+          <tr>
+            <th>Status</th>
+            <th>FDA Mandated</th>
+            <th>Voluntary Recall</th>        
+          </tr>
+        </thead>
+        <!-- <h5>Reason and Status</h5> -->
+        <tbody>
+          <tr>
+            <td>Ongoing</td>
+            <td>1</td>
+            <td>38</td>
+          </tr>
+          <tr>
+            <td>Terminated</td>
+            <td>12</td>
+            <td>933</td>
+          </tr>
+          <tr>
+            <td>Completed</td>
+            <td>0</td>
+            <td>16</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>  
+</table>
+
+  <h2>US Map </h2>
+  <p> Utilize this map to show where the area recalls had originated from. It can be filtered to show all recalls from the sample or by Class I or Class II. For FDA class definations, visit their website <a href= "https://www.fda.gov/safety/industry-guidance-recalls/recalls-background-and-definitions">HERE. </a> </p>
+
 <hr class="my-4">
 <!--Map Portion-->
 <div id='map'>
 </div>
 <!--Table Portion-->
-  <hr class="my-4">
-      <h4 class ="heading">Recalls</h4>
-      <table>
-        <thead>
+<div class="row">
+  <div class="col-md-12">
+    <h2 class ="heading">Recalls List</h2>
+    <table class="table table-bordered table-responsive recall">
+      <thead class="thead-dark">
           <tr>
             <th>City</th>
             <th>Address</th>
@@ -55,13 +110,15 @@
         </tbody>
       </table>
     </div>
-   </div>
- </div>
+  </div>
+</div>
 </body>
   <!-- Our JavaScript -->
-  <script type="text/javascript" src="static/js/logic.js"></script>
-
+  <script type="text/javascript" src="../static/js/logic.js"></script>
+    <!-- Our CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
   <script src='https://api.mapbox.com/mapbox-gl-js/v2.5.1/mapbox-gl.js'></script>
-
+    <!-- d3 JavaScript -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
   
 </html>

@@ -23,7 +23,7 @@ def scrape():
     db.items.drop()
 
     # Create Dictionarys
-    limit = 10
+    limit = 1000
     url = "https://api.fda.gov/food/enforcement.json?limit="
     query_url = f'{url}{limit}'
     # Dictionary to JSON Object using dumps() method

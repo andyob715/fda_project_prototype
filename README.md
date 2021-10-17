@@ -10,9 +10,32 @@ Tell a story using data visualizations allowing users to interact and explore da
 * JavaScript
 * HTML
 * CSS
-* JupyterNotebook
+* Python
+* Pandas
+* Mapbox
+* matplotlib
+* pymongo
+* flask 
+* MongoDB
 
 ## Link to Website
-
+To be added 
 
 ## Features 
+A sample of 1000 FDA food recalls were called from an FDA API. Data was filtered and cleaned. Zip code was added to the city from combining FDA data to Zippopotam API call. Using languages and datasets above, a website was created. This page is user friendly and shows a brief overview of the recalls sampled, a US Map allowing the user to filter and click on pinpoints within the map for more recall information, and a complete list of the sampled recalls. 
+
+
+	![](https://github.com/andyob715/fda_project_prototype/blob/staceyj/Project3/Images/snippet.png?raw=true)
+
+
+The data also provided the classification of the recall. To assist users, a link to the FDA definitions added for reference. 
+
+https://www.fda.gov/safety/industry-guidance-recalls/recalls-background-and-definitions
+
+## Goal
+The goal of using this data was to organize the FDA's list by location and to provide a visual. 
+
+## Contributors 
+* Andy: https://github.com/andyob715
+* Jake: https://github.com/JakeRose689
+* Stacey: https://github.com/staceyj118
