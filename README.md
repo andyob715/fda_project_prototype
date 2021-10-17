@@ -25,7 +25,7 @@ To be added
 A sample of 1000 FDA food recalls were called from an FDA API. Data was filtered and cleaned. Zip code was added to the city from combining FDA data to Zippopotam API call. Using languages and datasets above, a website was created. This page is user friendly and shows a brief overview of the recalls sampled, a US Map allowing the user to filter and click on pinpoints within the map for more recall information, and a complete list of the sampled recalls. 
 
 
-	![image](Project3/Images/snippet.png)
+	![image](https://github.com/andyob715/fda_project_prototype/blob/staceyj/Project3/Images/snippet.png)
 
 
 The data also provided the classification of the recall. To assist users, a link to the FDA definitions added for reference. 
