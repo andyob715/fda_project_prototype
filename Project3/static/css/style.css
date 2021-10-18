@@ -2,7 +2,7 @@
 body { 
   font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-size: 14px;
-  background-image: url('../../Images/paper-texture.jpeg');
+  background-image: url('css/paper-texture.jpg');
   background-size: cover;
   padding: 20px;
 } 
@@ -10,7 +10,7 @@ body {
 .header-img {
   width: 100%; 
   height: 400px; 
-  background: url('../../Images/spoons.jpeg'); 
+  background: url('spoons.jpeg'); 
   background-size: cover;
   background-position: center;
 }
@@ -79,3 +79,67 @@ table, th, td {
 .margin-top-80 {
   margin-top: 80px;
 }
+
+
+/* added to attempt pagination */
+
+.focus {
+  background-color:darkslateblue;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.pageNumber {
+  padding: 2px;
+  font-size: medium;
+  text-align: center;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+#tbldata{
+text-align: center;
+}
+
+#fit {
+  display: block;
+  position: relative;
+  margin: 5px auto;
+  width: 20%;
+  height: 40px;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  font-size: 12px;
+  text-align: center;
+  color: #fff;
+  background:darkslateblue;
+  z-index: 1;
+  }
+
+  #chartdiv {
+    width: 100%;
+    height: 700px;
+    padding: 2px;
+  }
+
+  p{
+    text-align: center;
+  }
+  
