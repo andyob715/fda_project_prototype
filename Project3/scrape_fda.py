@@ -23,7 +23,7 @@ def scrape():
     db.items.drop()
 
     # Create Dictionarys
-    limit = 1000
+    limit = 100
     url = "https://api.fda.gov/food/enforcement.json?limit="
     query_url = f'{url}{limit}'
     # Dictionary to JSON Object using dumps() method
@@ -39,7 +39,10 @@ def scrape():
         postal_formatted = postal_code[0:5]
         zipurl = f'https://api.zippopotam.us/us/{postal_formatted}'
         voluntary_mandated = fda_response_json["results"][i]["voluntary_mandated"]
-
+        recalling_firm = fda_response_json["results"][i]["recalling_firm"]
+        recall_class = fda_response_json["results"][i]["classification"]
+        recall_init_date = fda_response_json["results"][i]["recall_initiation_date"]
+        recall_year = recall_init_date[0:4]
         try:
 
             zip_response = requests.get(zipurl)
@@ -52,12 +55,15 @@ def scrape():
             post = {
             'country': country,
             'city': city,
+            'recalling_firm': recalling_firm,
             'address': address_1,
             'recall reason': reason_for_recall,
             'postal code':postal_formatted,
             'recall type': voluntary_mandated,
             'latitude' : zip_lat,
-            'longitude' : zip_long
+            'longitude' : zip_long,
+            'classification': recall_class,
+            'recall_year':recall_year
             }
         
             db.items.insert_one(post)
